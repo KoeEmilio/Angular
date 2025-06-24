@@ -17,14 +17,14 @@ export class CanActivateChildGuard implements CanActivateChild {
     
     console.log('CanActivateChild: Verificando acceso a ruta hija:', state.url);
     
-    // Verificar si el usuario está autenticado
+    
     if (!this.authService.isAuthenticated()) {
       console.log('Usuario no autenticado, redirigiendo a login');
       this.router.navigate(['/login']);
       return false;
     }
 
-    // Verificar permisos específicos para rutas hijas
+    
     const requiredRole = childRoute.data?.['role'];
     if (requiredRole && !this.authService.hasRole(requiredRole)) {
       console.log('Usuario sin permisos para:', requiredRole);

@@ -6,8 +6,8 @@ import { AuthService } from '../../services/auth';
   selector: 'app-admin',
   standalone: true,
   imports: [RouterOutlet, RouterModule],
-  templateUrl: './admin.html', // Corregido
-  styleUrls: ['./admin.css']   // Corregido
+  templateUrl: './admin.html',
+  styleUrls: ['./admin.css']
 })
 export class AdminComponent {
 
@@ -18,6 +18,12 @@ export class AdminComponent {
   }
 
   logout() {
-    // Tu lógica de logout
+    // Llamar al método logout del servicio de autenticación
+    this.authService.logout();
+    
+    // Redirigir al usuario a la página de inicio de sesión
+    this.router.navigate(['/login']);
+    
+    console.log('Sesión cerrada correctamente');
   }
 }
