@@ -8,8 +8,8 @@ import { CanComponentDeactivate } from '../../guards/can-deactivate.guard';
   selector: 'app-formulario',
   standalone: true,
   imports: [FormsModule, RouterModule, CommonModule],
-  templateUrl: './formulario.html', // Corregido
-  styleUrls: ['./formulario.css']   // Corregido
+  templateUrl: './formulario.html', 
+  styleUrls: ['./formulario.css']   
 })
 export class FormularioComponent implements CanComponentDeactivate {
   nombre: string = '';
